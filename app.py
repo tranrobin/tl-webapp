@@ -276,7 +276,7 @@ def show_predictions():
         prediction = model.predict(input_data)
         st.write(f'Predicted Mode Grade: {prediction[0]}')
     
-    image_path_importance = "/Users/robintran/Desktop/TL/Python_Guskey_Analysis/analysis/student_work_modeling/importance.png"
+    image_path_importance = "importance.png"
     st.image(image_path_importance, use_column_width=True)
 
 # Sidebar for navigation
