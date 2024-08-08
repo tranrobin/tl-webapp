@@ -9,10 +9,10 @@ import base64
 import streamlit as st
 
 # Load your trained model and encoder
-model = joblib.load('/Users/robintran/Desktop/TL/Python_Guskey_Analysis/analysis/student_work_modeling/rf_weights_guskey.pkl')
-encoder = joblib.load('/Users/robintran/Desktop/TL/Python_Guskey_Analysis/analysis/student_work_modeling/encoder.pkl')
-feature_names = joblib.load('/Users/robintran/Desktop/TL/Python_Guskey_Analysis/analysis/student_work_modeling/feature_names.pkl')
-data = pd.read_csv("/Users/robintran/Desktop/TL/Python_Guskey_Analysis/analysis/student_work_modeling/student_work_prediction.csv")
+model = joblib.load('rf_weights_guskey.pkl')
+encoder = joblib.load('encoder.pkl')
+feature_names = joblib.load('feature_names.pkl')
+data = pd.read_csv("student_work_prediction.csv")
 
 data["content_area"] = data["content_area"].replace("K-2 Early Literacy (Foundational Skills)", "K-2 Early Literacy")
 
@@ -29,7 +29,7 @@ data = data.drop(data.columns[0], axis=1)
 st.set_page_config(page_title="Integrating Multi-Survey Data", layout="wide")
 
 def show_introduction():
-    image_path = "/Users/robintran/Desktop/TL/Python_Guskey_Analysis/analysis/student_work_modeling/tllogo.png"
+    image_path = "tllogo.png"
     st.image(image_path, width=300)
     
     st.title("Integrating Multi-Survey Data for Better Student Performance Predictions and Teacher Training Evaluation")
@@ -55,7 +55,7 @@ By integrating these diverse data sources, the goals are to develop a more compr
 # Define the pages
 def show_workflow():
     st.header("Data Processing Pipeline")
-    image_path = "/Users/robintran/Desktop/TL/Python_Guskey_Analysis/analysis/student_work_modeling/tlbig.jpg"
+    image_path = "tlbig.jpg"
     
     def get_image_base64(image_path):
         with open(image_path, "rb") as image_file:
