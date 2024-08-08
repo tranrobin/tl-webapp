@@ -240,11 +240,11 @@ def show_predictions():
         ipg_form_score = st.slider("Classroom Observation Score", min_value=0, max_value=100, value=50)
 
     # Input fields for categorical variables
-    site_state = st.selectbox('Site State', ['LA', 'MA', 'NY', 'OH', 'TN'])
+    site_state = st.selectbox('Site State', ['MA', 'NY', 'AZ', 'AR', 'TX', 'WI', 'DE', 'IL', 'MS'])
     content_area = st.selectbox('Content Area', ['Math', 'ELA', 'K-2 Early Literacy (Foundational Skills)'])
     nps_all = st.selectbox('NPS', ['Detractor', 'Passive', 'Promoter'])
-    gender = st.selectbox('Gender', ['Female', 'Male', 'Prefer not to say'])
-    race = st.selectbox('Race', ['Asian', 'Black', 'Hispanic', 'More than one race', 'Prefer not to say', 'Unknown', 'White'])
+    gender = st.selectbox('Gender', ['Female', 'Male', 'Prefer not to say', 'Non-binary'])
+    race = st.selectbox('Race', ['Asian', 'Black or African American', 'Prefer not to say', 'Unknown', 'White'])
 
     # Create a DataFrame for the input
     input_data = pd.DataFrame({
